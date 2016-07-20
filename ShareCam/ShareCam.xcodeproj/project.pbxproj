@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E884E1D403603005ECBDA /* AppDelegate.swift */; };
+		2E8E88541D403603005ECBDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88521D403603005ECBDA /* Main.storyboard */; };
+		2E8E88561D403603005ECBDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88551D403603005ECBDA /* Assets.xcassets */; };
+		2E8E88591D403603005ECBDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88571D403603005ECBDA /* LaunchScreen.storyboard */; };
+		2E8E88641D403603005ECBDA /* ShareCamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E88631D403603005ECBDA /* ShareCamTests.swift */; };
+		2E8E886F1D403603005ECBDA /* ShareCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E886E1D403603005ECBDA /* ShareCamUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E8E88601D403603005ECBDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E8E88431D403603005ECBDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E8E884A1D403603005ECBDA;
+			remoteInfo = ShareCam;
+		};
+		2E8E886B1D403603005ECBDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E8E88431D403603005ECBDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E8E884A1D403603005ECBDA;
+			remoteInfo = ShareCam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E8E884B1D403603005ECBDA /* ShareCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8E884E1D403603005ECBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E8E88531D403603005ECBDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E8E88551D403603005ECBDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E8E88581D403603005ECBDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2E8E885A1D403603005ECBDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E8E885F1D403603005ECBDA /* ShareCamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8E88631D403603005ECBDA /* ShareCamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCamTests.swift; sourceTree = "<group>"; };
+		2E8E88651D403603005ECBDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E8E886A1D403603005ECBDA /* ShareCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8E886E1D403603005ECBDA /* ShareCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCamUITests.swift; sourceTree = "<group>"; };
+		2E8E88701D403603005ECBDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E8E88481D403603005ECBDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E885C1D403603005ECBDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E88671D403603005ECBDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E8E88421D403603005ECBDA = {
+			isa = PBXGroup;
+			children = (
+				2E8E884D1D403603005ECBDA /* ShareCam */,
+				2E8E88621D403603005ECBDA /* ShareCamTests */,
+				2E8E886D1D403603005ECBDA /* ShareCamUITests */,
+				2E8E884C1D403603005ECBDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E8E884C1D403603005ECBDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E8E884B1D403603005ECBDA /* ShareCam.app */,
+				2E8E885F1D403603005ECBDA /* ShareCamTests.xctest */,
+				2E8E886A1D403603005ECBDA /* ShareCamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E8E884D1D403603005ECBDA /* ShareCam */ = {
+			isa = PBXGroup;
+			children = (
+				2E8E884E1D403603005ECBDA /* AppDelegate.swift */,
+				2E8E88521D403603005ECBDA /* Main.storyboard */,
+				2E8E88551D403603005ECBDA /* Assets.xcassets */,
+				2E8E88571D403603005ECBDA /* LaunchScreen.storyboard */,
+				2E8E885A1D403603005ECBDA /* Info.plist */,
+			);
+			path = ShareCam;
+			sourceTree = "<group>";
+		};
+		2E8E88621D403603005ECBDA /* ShareCamTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E8E88631D403603005ECBDA /* ShareCamTests.swift */,
+				2E8E88651D403603005ECBDA /* Info.plist */,
+			);
+			path = ShareCamTests;
+			sourceTree = "<group>";
+		};
+		2E8E886D1D403603005ECBDA /* ShareCamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2E8E886E1D403603005ECBDA /* ShareCamUITests.swift */,
+				2E8E88701D403603005ECBDA /* Info.plist */,
+			);
+			path = ShareCamUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E8E884A1D403603005ECBDA /* ShareCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E8E88731D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCam" */;
+			buildPhases = (
+				2E8E88471D403603005ECBDA /* Sources */,
+				2E8E88481D403603005ECBDA /* Frameworks */,
+				2E8E88491D403603005ECBDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCam;
+			productName = ShareCam;
+			productReference = 2E8E884B1D403603005ECBDA /* ShareCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E8E885E1D403603005ECBDA /* ShareCamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E8E88761D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamTests" */;
+			buildPhases = (
+				2E8E885B1D403603005ECBDA /* Sources */,
+				2E8E885C1D403603005ECBDA /* Frameworks */,
+				2E8E885D1D403603005ECBDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E8E88611D403603005ECBDA /* PBXTargetDependency */,
+			);
+			name = ShareCamTests;
+			productName = ShareCamTests;
+			productReference = 2E8E885F1D403603005ECBDA /* ShareCamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2E8E88691D403603005ECBDA /* ShareCamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E8E88791D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamUITests" */;
+			buildPhases = (
+				2E8E88661D403603005ECBDA /* Sources */,
+				2E8E88671D403603005ECBDA /* Frameworks */,
+				2E8E88681D403603005ECBDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E8E886C1D403603005ECBDA /* PBXTargetDependency */,
+			);
+			name = ShareCamUITests;
+			productName = ShareCamUITests;
+			productReference = 2E8E886A1D403603005ECBDA /* ShareCamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E8E88431D403603005ECBDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Reduct Software";
+				TargetAttributes = {
+					2E8E884A1D403603005ECBDA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					2E8E885E1D403603005ECBDA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2E8E884A1D403603005ECBDA;
+					};
+					2E8E88691D403603005ECBDA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2E8E884A1D403603005ECBDA;
+					};
+				};
+			};
+			buildConfigurationList = 2E8E88461D403603005ECBDA /* Build configuration list for PBXProject "ShareCam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E8E88421D403603005ECBDA;
+			productRefGroup = 2E8E884C1D403603005ECBDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E8E884A1D403603005ECBDA /* ShareCam */,
+				2E8E885E1D403603005ECBDA /* ShareCamTests */,
+				2E8E88691D403603005ECBDA /* ShareCamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E8E88491D403603005ECBDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E8E88591D403603005ECBDA /* LaunchScreen.storyboard in Resources */,
+				2E8E88561D403603005ECBDA /* Assets.xcassets in Resources */,
+				2E8E88541D403603005ECBDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E885D1D403603005ECBDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E88681D403603005ECBDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E8E88471D403603005ECBDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E885B1D403603005ECBDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E8E88641D403603005ECBDA /* ShareCamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E8E88661D403603005ECBDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E8E886F1D403603005ECBDA /* ShareCamUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E8E88611D403603005ECBDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E8E884A1D403603005ECBDA /* ShareCam */;
+			targetProxy = 2E8E88601D403603005ECBDA /* PBXContainerItemProxy */;
+		};
+		2E8E886C1D403603005ECBDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E8E884A1D403603005ECBDA /* ShareCam */;
+			targetProxy = 2E8E886B1D403603005ECBDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E8E88521D403603005ECBDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E8E88531D403603005ECBDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2E8E88571D403603005ECBDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E8E88581D403603005ECBDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E8E88711D403603005ECBDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E8E88721D403603005ECBDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E8E88741D403603005ECBDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShareCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E8E88751D403603005ECBDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShareCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2E8E88771D403603005ECBDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ShareCamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCam.app/ShareCam";
+			};
+			name = Debug;
+		};
+		2E8E88781D403603005ECBDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ShareCamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCam.app/ShareCam";
+			};
+			name = Release;
+		};
+		2E8E887A1D403603005ECBDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ShareCamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ShareCam;
+			};
+			name = Debug;
+		};
+		2E8E887B1D403603005ECBDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ShareCamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ReductSoftware.ShareCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ShareCam;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E8E88461D403603005ECBDA /* Build configuration list for PBXProject "ShareCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E8E88711D403603005ECBDA /* Debug */,
+				2E8E88721D403603005ECBDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E8E88731D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E8E88741D403603005ECBDA /* Debug */,
+				2E8E88751D403603005ECBDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2E8E88761D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E8E88771D403603005ECBDA /* Debug */,
+				2E8E88781D403603005ECBDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2E8E88791D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E8E887A1D403603005ECBDA /* Debug */,
+				2E8E887B1D403603005ECBDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E8E88431D403603005ECBDA /* Project object */;
+}
