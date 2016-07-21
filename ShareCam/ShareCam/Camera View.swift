@@ -15,9 +15,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
-    @IBAction func takePhoto(sender: UIButton) {
-        
-    }
+
+    
+    var output: UIImage?
     
     
     // This creates the session, but does not specify the input
@@ -35,7 +35,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.createAVSession()
     }
     
-    // This metthod specifies camera inpput, error handling and defines the "stillImageOutput" property.
+    // This method specifies camera inpput, error handling and defines the "stillImageOutput" property.
     func createAVSession(){
         captureSession = AVCaptureSession()
         captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
@@ -63,9 +63,26 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
+    
+    // This is the image output
+    @IBAction func takePhoto(sender: UIButton) {
+        if let videoConnection = stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo) {
+            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler:
+                { (sampleBuffer, error) in
+                    
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
+                    let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, CGColorRenderingIntent.RenderingIntentDefault)
+                    let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                    self.output = image
+            })
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "photoTaken" {
-            let photo = segue.destinationViewController as! 
+            let photo = segue.destinationViewController as! CaptureView
+            photo.capturedPhoto?.image = output
         }
     }
     

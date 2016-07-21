@@ -12,5 +12,6 @@ import Social
 import AVFoundation
 
 class CaptureView: UIViewController {
+    @IBOutlet weak var capturedPhoto: UIImageView!
     
 }
