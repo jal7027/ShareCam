@@ -14,22 +14,25 @@ import AVFoundation
 class CaptureView: UIViewController {
     @IBOutlet weak var capturedPhoto: UIImageView!
     
+    var screenSize: CGRect = CameraView().screenSize
+    
+    
     // This is data passed from Camera View's prepareForSegue()
     let background = CameraView().output
     
     // This should composite images for the combined view
     func compositeImage() {
-        let bottomImage = UIImage(named: "bottom")!
-        let topImage = UIImage(named: "top")!
+        let bottomImage = UIImage(contentsOfFile: "capturedPhoto")
+        let topImage = UIImage(named: "trafficLabel")!
         
         let origin: CGPoint = CGPoint(x: 13, y: 310)
         
         
         // FINISH
-        let newSize = CGSizeMake(<#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
+        let newSize = CGSizeMake(screenSize.width, screenSize.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
-        bottomImage.drawInRect(CGRect(origin: CGPointZero, size: newSize))
+        bottomImage!.drawInRect(CGRect(origin: CGPointZero, size: newSize))
         topImage.drawInRect(CGRect(origin: origin, size: newSize))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

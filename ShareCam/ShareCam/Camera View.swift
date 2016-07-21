@@ -22,6 +22,8 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // This is the final output that can be passed to other views through prepareForSegue()
     var output: UIImage?
     
+    // We'll use this to capture the size of the photo
+    var screenSize: CGRect = UIScreen.mainScreen().bounds
     
     // This creates the session, but does not specify the input
     var captureSession: AVCaptureSession?
@@ -41,6 +43,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createAVSession()
+        
     }
     
     // This method specifies camera inpput, error handling and defines the "stillImageOutput" property.
@@ -82,7 +85,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     let dataProvider = CGDataProviderCreateWithCFData(imageData)
                     let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, CGColorRenderingIntent.RenderingIntentDefault)
                     let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
-                    
+                
                     // This assigns "output" the final value of the image
                     self.output = image
             })
@@ -94,7 +97,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         if segue.identifier == "sendData" {
             if let photo = segue.destinationViewController as? CaptureView {
                 photo.capturedPhoto?.image = output
-                
+                photo.screenSize = screenSize
             }
         }
     }
