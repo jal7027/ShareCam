@@ -29,6 +29,11 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // This object gathers data from the camera and passes it to cameraView
     var previewLayer: AVCaptureVideoPreviewLayer?
     
+    override func viewWillAppear(animated: Bool) {
+        self.createAVSession()
+        
+    }
+    
     // This loads an AV Session as soon as the view loads, but before it appears
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +58,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                 previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
-                cameraView.layer.addSublayer(previewLayer!)
+                //cameraView.layer.addSublayer(cameraView!)
                 captureSession?.startRunning()
             }
             
