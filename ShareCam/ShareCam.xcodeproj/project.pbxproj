@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5A7C091D40574B00D29099 /* Capture View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A7C081D40574B00D29099 /* Capture View.swift */; };
 		2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E884E1D403603005ECBDA /* AppDelegate.swift */; };
 		2E8E88541D403603005ECBDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88521D403603005ECBDA /* Main.storyboard */; };
 		2E8E88561D403603005ECBDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88551D403603005ECBDA /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E5A7C081D40574B00D29099 /* Capture View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Capture View.swift"; sourceTree = "<group>"; };
 		2E8E884B1D403603005ECBDA /* ShareCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8E884E1D403603005ECBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E8E88531D403603005ECBDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				2E8E884E1D403603005ECBDA /* AppDelegate.swift */,
 				2E8E88521D403603005ECBDA /* Main.storyboard */,
 				2E8E887C1D40504E005ECBDA /* Camera View.swift */,
+				2E5A7C081D40574B00D29099 /* Capture View.swift */,
 				2E8E88551D403603005ECBDA /* Assets.xcassets */,
 				2E8E88571D403603005ECBDA /* LaunchScreen.storyboard */,
 				2E8E885A1D403603005ECBDA /* Info.plist */,
@@ -258,6 +261,7 @@
 			files = (
 				2E8E887D1D40504E005ECBDA /* Camera View.swift in Sources */,
 				2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */,
+				2E5A7C091D40574B00D29099 /* Capture View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,7 @@
 				2E8E88751D403603005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E8E88761D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				2E8E88781D403603005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E8E88791D403603005ECBDA /* Build configuration list for PBXNativeTarget "ShareCamUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				2E8E887B1D403603005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

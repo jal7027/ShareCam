@@ -15,6 +15,10 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
+    @IBAction func takePhoto(sender: UIButton) {
+        
+    }
+    
     
     // This creates the session, but does not specify the input
     var captureSession: AVCaptureSession?
@@ -57,6 +61,12 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             print("no capture device was found")
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "photoTaken" {
+            let photo = segue.destinationViewController as! 
+        }
     }
     
 
