@@ -22,20 +22,20 @@ class CaptureView: UIViewController {
     
     // This should composite images for the combined view
     func compositeImage() {
-        let bottomImage = UIImage(contentsOfFile: "capturedPhoto")
-        let topImage = UIImage(named: "trafficLabel")
-        
-        let origin: CGPoint = CGPoint(x: 13, y: 310)
-        
-        
-        // FINISH
-        let newSize = CGSizeMake(screenSize.width, screenSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        
-        bottomImage!.drawInRect(CGRect(origin: CGPointZero, size: newSize))
-        topImage!.drawInRect(CGRect(origin: origin, size: newSize))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+//        let bottomImage = UIImage(contentsOfFile: "capturedPhoto")
+//        let topImage = UIImage(named: "trafficLabel")
+//        
+//        let origin: CGPoint = CGPoint(x: 13, y: 310)
+//        
+//        
+//        // FINISH
+//        let newSize = CGSizeMake(screenSize.width, screenSize.height)
+//        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+//        
+//        bottomImage!.drawInRect(CGRect(origin: CGPointZero, size: newSize))
+//        topImage!.drawInRect(CGRect(origin: origin, size: newSize))
+//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
     }
     
     // Now that we have a composite image, this will load everything and make it pretty.
@@ -43,10 +43,21 @@ class CaptureView: UIViewController {
         super.viewDidLoad()
         compositeImage()
         self.navigationController?.navigationBarHidden = true
+        let background = CameraView().output
     }
     
     // Hide Status Bar
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+}
+
+extension UIImage {
+    class func imageWithView(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0)
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img
     }
 }
