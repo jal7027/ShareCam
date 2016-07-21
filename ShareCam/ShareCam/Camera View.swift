@@ -19,6 +19,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
 
+    @IBOutlet weak var photoButton: UIButton!
     // This is the final output that can be passed to other views through prepareForSegue()
     var output: UIImage?
     
@@ -73,7 +74,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 //cameraView.layer.addSublayer(cameraView!)
                 
                 // It works, but the camera doesn't fit the display
-                self.view.layer.addSublayer(previewLayer!)
+                cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
             }
             
@@ -99,6 +100,11 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     self.output = image
             })
         }
+    }
+    
+    // Hide Status Bar
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     // Here's where we attempt to pass the captured image to CaptureView with the name "output"

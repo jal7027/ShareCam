@@ -44,4 +44,9 @@ class CaptureView: UIViewController {
         compositeImage()
         self.navigationController?.navigationBarHidden = true
     }
+    
+    // Hide Status Bar
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }

@@ -33,36 +33,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPc-nD-bQ4">
-                                <rect key="frame" x="263" y="285" width="74" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w5-BU-bcT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is the traffic label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE5-9v-dvY">
+                                <rect key="frame" x="218" y="290" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPc-nD-bQ4">
+                                <rect key="frame" x="263" y="385" width="74" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="take photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="odN-na-hbR" eventType="touchUpInside" id="KRw-ZK-qu6"/>
                                     <segue destination="Lnq-fo-9kI" kind="show" identifier="sendData" id="WoR-UJ-H2l"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is the traffic label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE5-9v-dvY">
-                                <rect key="frame" x="218" y="290" width="164" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w5-BU-bcT">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iHI-F9-jRP" firstAttribute="top" secondItem="8w5-BU-bcT" secondAttribute="bottom" id="3Og-8j-5tH"/>
-                            <constraint firstItem="8w5-BU-bcT" firstAttribute="leading" secondItem="39p-T0-bPu" secondAttribute="leading" id="3cq-FW-ZDF"/>
-                            <constraint firstItem="8w5-BU-bcT" firstAttribute="top" secondItem="7rF-dK-mwk" secondAttribute="bottom" id="Nic-F5-san"/>
-                            <constraint firstAttribute="trailing" secondItem="8w5-BU-bcT" secondAttribute="trailing" id="hJd-oy-Seh"/>
+                            <constraint firstItem="HPc-nD-bQ4" firstAttribute="centerY" secondItem="39p-T0-bPu" secondAttribute="centerY" constant="100" id="00k-4q-OoA"/>
+                            <constraint firstItem="hE5-9v-dvY" firstAttribute="centerY" secondItem="39p-T0-bPu" secondAttribute="centerY" id="39L-AZ-8Qp"/>
+                            <constraint firstItem="8w5-BU-bcT" firstAttribute="bottom" secondItem="iHI-F9-jRP" secondAttribute="top" id="3S2-8I-LPF"/>
+                            <constraint firstItem="8w5-BU-bcT" firstAttribute="leading" secondItem="39p-T0-bPu" secondAttribute="leading" id="H2g-hQ-9vJ"/>
+                            <constraint firstItem="HPc-nD-bQ4" firstAttribute="centerX" secondItem="39p-T0-bPu" secondAttribute="centerX" id="QJf-t0-vV2"/>
+                            <constraint firstItem="8w5-BU-bcT" firstAttribute="centerX" secondItem="hE5-9v-dvY" secondAttribute="centerX" id="fEJ-Cd-ATI"/>
+                            <constraint firstAttribute="trailing" secondItem="8w5-BU-bcT" secondAttribute="trailing" id="oSc-88-T1E"/>
+                            <constraint firstItem="8w5-BU-bcT" firstAttribute="top" secondItem="7rF-dK-mwk" secondAttribute="bottom" id="tky-Xf-kqp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PXL-BM-Q8n"/>
                     <connections>
                         <outlet property="cameraView" destination="8w5-BU-bcT" id="e1H-kK-P3j"/>
+                        <outlet property="photoButton" destination="HPc-nD-bQ4" id="ytt-Fs-FLs"/>
                         <outlet property="trafficLabel" destination="hE5-9v-dvY" id="4rH-pp-Ldx"/>
                     </connections>
                 </viewController>
