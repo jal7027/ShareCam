@@ -41,9 +41,15 @@
                                         <state key="normal" title="take photo"/>
                                         <connections>
                                             <action selector="takePhoto:" destination="odN-na-hbR" eventType="touchUpInside" id="KRw-ZK-qu6"/>
-                                            <segue destination="Lnq-fo-9kI" kind="show" identifier="capturedPhoto" id="WoR-UJ-H2l"/>
+                                            <segue destination="Lnq-fo-9kI" kind="show" identifier="sendData" id="WoR-UJ-H2l"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is the traffic label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE5-9v-dvY">
+                                        <rect key="frame" x="90" y="285" width="164" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -59,6 +65,7 @@
                     <navigationItem key="navigationItem" id="PXL-BM-Q8n"/>
                     <connections>
                         <outlet property="cameraView" destination="8w5-BU-bcT" id="e1H-kK-P3j"/>
+                        <outlet property="trafficLabel" destination="hE5-9v-dvY" id="4rH-pp-Ldx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lae-SU-qRr" userLabel="First Responder" sceneMemberID="firstResponder"/>

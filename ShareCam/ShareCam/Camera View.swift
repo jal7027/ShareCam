@@ -13,10 +13,13 @@ import AVFoundation
 
 class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigationBarDelegate {
     
+    // Traffic Label: UILabel
+    @IBOutlet weak var trafficLabel: UILabel!
+    
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
 
-    
+    // This is the final output that can be passed to other views through prepareForSegue()
     var output: UIImage?
     
     
@@ -31,7 +34,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewWillAppear(animated: Bool) {
         self.createAVSession()
-        
+        previewLayer?.frame = cameraView.bounds
     }
     
     // This loads an AV Session as soon as the view loads, but before it appears
@@ -79,15 +82,20 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     let dataProvider = CGDataProviderCreateWithCFData(imageData)
                     let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, CGColorRenderingIntent.RenderingIntentDefault)
                     let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                    
+                    // This assigns "output" the final value of the image
                     self.output = image
             })
         }
     }
     
+    // Here's where we attempt to pass the captured image to CaptureView with the name "output"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "photoTaken" {
-            let photo = segue.destinationViewController as! CaptureView
-            photo.capturedPhoto?.image = output
+        if segue.identifier == "sendData" {
+            if let photo = segue.destinationViewController as? CaptureView {
+                photo.capturedPhoto?.image = output
+                
+            }
         }
     }
     
