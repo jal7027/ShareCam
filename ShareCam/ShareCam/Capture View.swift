@@ -23,7 +23,7 @@ class CaptureView: UIViewController {
     // This should composite images for the combined view
     func compositeImage() {
         let bottomImage = UIImage(contentsOfFile: "capturedPhoto")
-        let topImage = UIImage(named: "trafficLabel")!
+        let topImage = UIImage(named: "trafficLabel")
         
         let origin: CGPoint = CGPoint(x: 13, y: 310)
         
@@ -33,7 +33,7 @@ class CaptureView: UIViewController {
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
         bottomImage!.drawInRect(CGRect(origin: CGPointZero, size: newSize))
-        topImage.drawInRect(CGRect(origin: origin, size: newSize))
+        topImage!.drawInRect(CGRect(origin: origin, size: newSize))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
@@ -42,5 +42,6 @@ class CaptureView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         compositeImage()
+        self.navigationController?.navigationBarHidden = true
     }
 }

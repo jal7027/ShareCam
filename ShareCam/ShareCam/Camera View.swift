@@ -43,7 +43,13 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createAVSession()
-        
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        previewLayer?.frame = cameraView.bounds
+        self.navigationController?.navigationBarHidden = true
     }
     
     // This method specifies camera inpput, error handling and defines the "stillImageOutput" property.
@@ -65,6 +71,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
                 //cameraView.layer.addSublayer(cameraView!)
+                
+                // It works, but the camera doesn't fit the display
+                self.view.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
             }
             
