@@ -13,16 +13,13 @@ import AVFoundation
 
 class CaptureView: UIViewController {
     
-    @IBOutlet weak var capturedPhoto: UIView!
+    @IBOutlet weak var capturedPhoto: UIImageView!
     
     var screenSize: CGRect?
     
-    func setBackground() {
-        
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
+        capturedPhoto.image = output
     }
     
     

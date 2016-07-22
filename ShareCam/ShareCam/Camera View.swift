@@ -16,7 +16,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // Traffic Label: UILabel
     @IBOutlet weak var trafficLabel: UILabel!
     
-    var newImage: UIImage?
+//    var newImage: UIImage?
     
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
@@ -112,18 +112,14 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     self.labelImage = UIImage.imageWithLabel(self.trafficLabel)
                 
                     // This assigns "output" the final value of the image
-                    self.output = image
-                    self.compositeImage()
+                    self.output = self.compositeImage(image)
+                    self.performSegueWithIdentifier("SendData", sender: self)
             })
         }
     }
     
-    func compositeImage() -> UIImage {
-        var bottomImage: UIImage {
-            get {
-                return output!
-            }
-        }
+    func compositeImage(bottomImage : UIImage) -> UIImage {
+
         let topImage: UIImage = self.labelImage
         
         let origin: CGPoint = CGPoint(x: 13, y: 310)
@@ -132,7 +128,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
         bottomImage.drawInRect(CGRect(origin: CGPointZero, size: newSize))
-        topImage.drawInRect(CGRect(origin: origin, size: newSize))
+        
+        // This places the image at the right spot
+        topImage.drawInRect(trafficLabel.frame)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -146,12 +144,11 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // Here's where we attempt to pass the captured image to CaptureView with the name "output"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "sendData" {
+        if segue.identifier == "SendData" {
             if let photo = segue.destinationViewController as? CaptureView {
                 photo.output = output
                 photo.screenSize = screenSize
                 photo.labelImage = labelImage
-                photo.newImage = newImage
             }
         }
     }

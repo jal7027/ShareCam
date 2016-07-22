@@ -49,7 +49,6 @@
                                 <state key="normal" title="take photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="odN-na-hbR" eventType="touchUpInside" id="KRw-ZK-qu6"/>
-                                    <segue destination="Lnq-fo-9kI" kind="show" identifier="sendData" id="WoR-UJ-H2l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +69,7 @@
                         <outlet property="cameraView" destination="8w5-BU-bcT" id="e1H-kK-P3j"/>
                         <outlet property="photoButton" destination="HPc-nD-bQ4" id="ytt-Fs-FLs"/>
                         <outlet property="trafficLabel" destination="hE5-9v-dvY" id="4rH-pp-Ldx"/>
+                        <segue destination="Lnq-fo-9kI" kind="presentation" identifier="SendData" modalTransitionStyle="crossDissolve" id="7jA-xb-ATV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lae-SU-qRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,21 +88,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMg-gI-Vx3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4J-7K-Edv" userLabel="capturedImage">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RMg-gI-Vx3" firstAttribute="top" secondItem="HN6-KW-AVY" secondAttribute="bottom" id="AcV-4x-IPg"/>
-                            <constraint firstAttribute="trailing" secondItem="RMg-gI-Vx3" secondAttribute="trailing" id="dGo-On-4ZU"/>
-                            <constraint firstItem="RMg-gI-Vx3" firstAttribute="leading" secondItem="agA-SF-10l" secondAttribute="leading" id="lr9-3h-Z4X"/>
-                            <constraint firstItem="8Yg-kb-d4X" firstAttribute="top" secondItem="RMg-gI-Vx3" secondAttribute="bottom" id="yR3-Bc-Zq8"/>
+                            <constraint firstItem="T4J-7K-Edv" firstAttribute="leading" secondItem="agA-SF-10l" secondAttribute="leading" id="BVb-yj-zcO"/>
+                            <constraint firstItem="T4J-7K-Edv" firstAttribute="top" secondItem="HN6-KW-AVY" secondAttribute="bottom" id="Esb-g9-8oz"/>
+                            <constraint firstAttribute="trailing" secondItem="T4J-7K-Edv" secondAttribute="trailing" id="Nu4-Ub-cxV"/>
+                            <constraint firstItem="8Yg-kb-d4X" firstAttribute="top" secondItem="T4J-7K-Edv" secondAttribute="bottom" id="f57-5M-mXX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="capturedPhoto" destination="RMg-gI-Vx3" id="o7g-10-7OT"/>
+                        <outlet property="capturedPhoto" destination="T4J-7K-Edv" id="fn5-IJ-nG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chT-aM-2mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
