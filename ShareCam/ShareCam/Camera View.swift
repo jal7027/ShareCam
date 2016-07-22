@@ -51,8 +51,6 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.createAVSession()
         self.navigationController?.navigationBarHidden = true
         let labelImage = UIImage.imageWithLabel(trafficLabel)
-        
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -111,8 +109,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     
                     self.labelImage = UIImage.imageWithLabel(self.trafficLabel)
                 
-                    // This assigns "output" the final value of the image
+                    // This assigns "output" the final value of the composited image
                     self.output = self.compositeImage(image)
+                    // And here goes the SendData segue
                     self.performSegueWithIdentifier("SendData", sender: self)
             })
         }

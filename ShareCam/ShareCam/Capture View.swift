@@ -28,21 +28,7 @@ class CaptureView: UIViewController {
     var labelImage: UIImage?
     var newImage: UIImage?
     
-    // This should composite images for the combined view
-//    func compositeImage() {
-//        let bottomImage: UIImage = output!
-//        let topImage: UIImage = labelImage!
-//        
-//        let origin: CGPoint = CGPoint(x: 13, y: 310)
-//
-//        let newSize = CGSizeMake(screenSize!.width, screenSize!.height)
-//        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-//        
-//        bottomImage.drawInRect(CGRect(origin: CGPointZero, size: newSize))
-//        topImage.drawInRect(CGRect(origin: origin, size: newSize))
-//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//    }
+
     
     
     
