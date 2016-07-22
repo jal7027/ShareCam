@@ -12,38 +12,55 @@ import Social
 import AVFoundation
 
 class CaptureView: UIViewController {
-    @IBOutlet weak var capturedPhoto: UIImageView!
     
-    var screenSize: CGRect = CameraView().screenSize
+    @IBOutlet weak var capturedPhoto: UIView!
+    
+    var screenSize: CGRect?
+    
+    func setBackground() {
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
+    }
     
     
     // This is data passed from Camera View's prepareForSegue()
-    let background = CameraView().output
+    var output: UIImage?
+    var labelImage: UIImage?
+    var newImage: UIImage?
     
     // This should composite images for the combined view
-    func compositeImage() {
-//        let bottomImage = UIImage(contentsOfFile: "capturedPhoto")
-//        let topImage = UIImage(named: "trafficLabel")
+//    func compositeImage() {
+//        let bottomImage: UIImage = output!
+//        let topImage: UIImage = labelImage!
 //        
 //        let origin: CGPoint = CGPoint(x: 13, y: 310)
-//        
-//        
-//        // FINISH
-//        let newSize = CGSizeMake(screenSize.width, screenSize.height)
+//
+//        let newSize = CGSizeMake(screenSize!.width, screenSize!.height)
 //        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
 //        
-//        bottomImage!.drawInRect(CGRect(origin: CGPointZero, size: newSize))
-//        topImage!.drawInRect(CGRect(origin: origin, size: newSize))
+//        bottomImage.drawInRect(CGRect(origin: CGPointZero, size: newSize))
+//        topImage.drawInRect(CGRect(origin: origin, size: newSize))
 //        let newImage = UIGraphicsGetImageFromCurrentImageContext()
 //        UIGraphicsEndImageContext()
-    }
+//    }
+    
+    
+    
+    
+    
+    
     
     // Now that we have a composite image, this will load everything and make it pretty.
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        compositeImage()
+        
         self.navigationController?.navigationBarHidden = true
-        let background = CameraView().output
+        
     }
     
     // Hide Status Bar
@@ -61,3 +78,5 @@ extension UIImage {
         return img
     }
 }
+
+
