@@ -16,6 +16,12 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // Traffic Label: UILabel
     @IBOutlet weak var trafficLabel: UILabel!
     
+    var camera = CameraType.Back
+    
+    @IBAction func camSwitcher(sender: AnyObject) {
+        
+        reloadCamera()
+    }
 //    var newImage: UIImage?
     
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
@@ -57,6 +63,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         super.viewDidAppear(animated)
         previewLayer?.frame = cameraView.bounds
         self.navigationController?.navigationBarHidden = true
+        reloadCamera()
     }
     
     func labSet() {
@@ -135,6 +142,57 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         return newImage
     }
+    
+    enum CameraType {
+        case Front
+        case Back
+    }
+    
+    // This function switches the camera
+    func reloadCamera() {
+        // camera loading code
+        captureSession?.stopRunning()
+        previewLayer?.removeFromSuperlayer()
+        captureSession = AVCaptureSession()
+        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
+        var captureDevice:AVCaptureDevice! = nil
+        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        if camera == CameraType.Back {
+            let videoDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+            
+            
+            for device in videoDevices{
+                let device = device as! AVCaptureDevice
+                if device.position == AVCaptureDevicePosition.Front {
+                    captureDevice = device
+                    break
+                }
+            }
+        } else {
+            var captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        }
+        
+        var error: NSError?
+        var input = AVCaptureDeviceInputdevice: (AVCaptureDevice)
+        
+        if error == nil && captureSession!.canAddInput(input) {
+            captureSession!.addInput(input)
+            
+            stillImageOutput = AVCaptureStillImageOutput()
+            stillImageOutput!.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+            if captureSession!.canAddOutput(stillImageOutput) {
+                captureSession!.addOutput(stillImageOutput)
+                
+                previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                previewLayer!.videoGravity = AVLayerVideoGravityResizeAspect
+                previewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.Portrait
+                previewView.layer.addSublayer(previewLayer)
+                
+                captureSession!.startRunning()
+            }
+        }
+    }
+    //
     
     // Hide Status Bar
     override func prefersStatusBarHidden() -> Bool {
