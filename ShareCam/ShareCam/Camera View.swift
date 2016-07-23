@@ -62,8 +62,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer?.frame = cameraView.bounds
-        self.navigationController?.navigationBarHidden = true
         reloadCamera()
+        self.navigationController?.navigationBarHidden = true
+        
     }
     
     func labSet() {
@@ -160,10 +161,9 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         if camera == CameraType.Back {
             let videoDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
             
-            
             for device in videoDevices{
                 let device = device as! AVCaptureDevice
-                if device.position == AVCaptureDevicePosition.Front {
+                if device.position == AVCaptureDevicePosition.Back {
                     captureDevice = device
                     break
                 }
@@ -173,7 +173,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         }
         
         var error: NSError?
-        var input = AVCaptureDeviceInputdevice: (AVCaptureDevice)
+        var input = AVCaptureDeviceInput()
         
         if error == nil && captureSession!.canAddInput(input) {
             captureSession!.addInput(input)
@@ -186,8 +186,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                 previewLayer!.videoGravity = AVLayerVideoGravityResizeAspect
                 previewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.Portrait
-                previewView.layer.addSublayer(previewLayer)
-                
+                cameraView.layer.addSublayer(previewLayer!)
                 captureSession!.startRunning()
             }
         }
