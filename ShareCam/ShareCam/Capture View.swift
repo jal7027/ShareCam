@@ -30,12 +30,6 @@ class CaptureView: UIViewController {
     
 
     
-    
-    
-    
-    
-    
-    
     // Now that we have a composite image, this will load everything and make it pretty.
     
     

@@ -19,14 +19,13 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var camera = CameraType.Back
     
     @IBAction func camSwitcher(sender: AnyObject) {
-        
-        reloadCamera()
+        self.reloadCamera()
     }
-//    var newImage: UIImage?
+    //    var newImage: UIImage?
     
     // UIView that constitutes the background of the Camera View - directly displays content from the camera
     @IBOutlet weak var cameraView: UIView!
-
+    
     @IBOutlet weak var photoButton: UIButton!
     // This is the final output that can be passed to other views through prepareForSegue()
     var output: UIImage?
@@ -54,6 +53,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // This loads an AV Session as soon as the view loads, but before it appears
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        self.reloadCamera()
         self.createAVSession()
         self.navigationController?.navigationBarHidden = true
         let labelImage = UIImage.imageWithLabel(trafficLabel)
@@ -62,7 +62,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer?.frame = cameraView.bounds
-        reloadCamera()
+        //        reloadCamera()
         self.navigationController?.navigationBarHidden = true
         
     }
@@ -103,6 +103,65 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
+    func createFrontCameraSession(){
+        
+        captureSession?.stopRunning()
+        captureSession = AVCaptureSession()
+        previewLayer?.frame = cameraView.bounds
+        captureSession?.sessionPreset = AVCaptureSessionPreset640x480
+        let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+        let error: NSError?
+        var input : AVCaptureDeviceInput?
+        var captureDevice:AVCaptureDevice?
+        
+        if camera == CameraType.Back {
+            //check for media types on the devices (capture points)
+            let videoDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+            for device in videoDevices{
+                let device = device as! AVCaptureDevice
+                if device.position == AVCaptureDevicePosition.Front {
+                    captureDevice = device
+                    do {
+                        input = try AVCaptureDeviceInput(device: captureDevice)
+                        captureSession?.addInput(input)
+                        stillImageOutput = AVCaptureStillImageOutput()
+                        stillImageOutput?.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
+                        
+                        if ((captureSession?.canAddOutput(stillImageOutput)) != nil){
+                            captureSession?.addOutput(stillImageOutput)
+                            previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                            previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
+                            previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
+                            //cameraView.layer.addSublayer(cameraView!)
+                            
+                            // It works, but the camera doesn't fit the display
+                            
+                            cameraView.layer.addSublayer(previewLayer!)
+                            captureSession?.startRunning()
+                        }
+                        
+                    } catch _ {
+                        print("no capture device was found")
+                    }
+                    
+                    
+                }
+            }
+        } else {
+            var captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        }
+        
+        
+    }
+    
+    // This function switches the camera
+    func reloadCamera() {
+        
+        createFrontCameraSession()
+    }
+    //
+    
     
     // This is the image output
     @IBAction func takePhoto(sender: UIButton) {
@@ -116,7 +175,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
                     
                     self.labelImage = UIImage.imageWithLabel(self.trafficLabel)
-                
+                    
                     // This assigns "output" the final value of the composited image
                     self.output = self.compositeImage(image)
                     // And here goes the SendData segue
@@ -126,7 +185,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func compositeImage(bottomImage : UIImage) -> UIImage {
-
+        
         let topImage: UIImage = self.labelImage
         
         let origin: CGPoint = CGPoint(x: 13, y: 310)
@@ -149,49 +208,6 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         case Back
     }
     
-    // This function switches the camera
-    func reloadCamera() {
-        // camera loading code
-        captureSession?.stopRunning()
-        previewLayer?.removeFromSuperlayer()
-        captureSession = AVCaptureSession()
-        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
-        var captureDevice:AVCaptureDevice! = nil
-        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        if camera == CameraType.Back {
-            let videoDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
-            
-            for device in videoDevices{
-                let device = device as! AVCaptureDevice
-                if device.position == AVCaptureDevicePosition.Back {
-                    captureDevice = device
-                    break
-                }
-            }
-        } else {
-            var captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        }
-        
-        var error: NSError?
-        var input = AVCaptureDeviceInput()
-        
-        if error == nil && captureSession!.canAddInput(input) {
-            captureSession!.addInput(input)
-            
-            stillImageOutput = AVCaptureStillImageOutput()
-            stillImageOutput!.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-            if captureSession!.canAddOutput(stillImageOutput) {
-                captureSession!.addOutput(stillImageOutput)
-                
-                previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                previewLayer!.videoGravity = AVLayerVideoGravityResizeAspect
-                previewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.Portrait
-                cameraView.layer.addSublayer(previewLayer!)
-                captureSession!.startRunning()
-            }
-        }
-    }
-    //
     
     // Hide Status Bar
     override func prefersStatusBarHidden() -> Bool {
@@ -209,7 +225,7 @@ class CameraView: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         }
     }
     
-
+    
 }
 
 extension UIImage {

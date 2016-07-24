@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0DFCC71D43F9AB00BA90AA /* Switch View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DFCC61D43F9AB00BA90AA /* Switch View.swift */; };
 		2E5A7C091D40574B00D29099 /* Capture View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A7C081D40574B00D29099 /* Capture View.swift */; };
 		2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E884E1D403603005ECBDA /* AppDelegate.swift */; };
 		2E8E88541D403603005ECBDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E88521D403603005ECBDA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0DFCC61D43F9AB00BA90AA /* Switch View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Switch View.swift"; sourceTree = "<group>"; };
 		2E5A7C081D40574B00D29099 /* Capture View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Capture View.swift"; sourceTree = "<group>"; };
 		2E8E884B1D403603005ECBDA /* ShareCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8E884E1D403603005ECBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2E8E884E1D403603005ECBDA /* AppDelegate.swift */,
 				2E8E88521D403603005ECBDA /* Main.storyboard */,
 				2E8E887C1D40504E005ECBDA /* Camera View.swift */,
+				2E0DFCC61D43F9AB00BA90AA /* Switch View.swift */,
 				2E5A7C081D40574B00D29099 /* Capture View.swift */,
 				2E8E88551D403603005ECBDA /* Assets.xcassets */,
 				2E8E88571D403603005ECBDA /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0DFCC71D43F9AB00BA90AA /* Switch View.swift in Sources */,
 				2E8E887D1D40504E005ECBDA /* Camera View.swift in Sources */,
 				2E8E884F1D403603005ECBDA /* AppDelegate.swift in Sources */,
 				2E5A7C091D40574B00D29099 /* Capture View.swift in Sources */,
