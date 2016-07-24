@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xXO-eZ-iYN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n92-1g-hm4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,43 +35,42 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKY-8x-ijU">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nd-eL-3pV">
-                                        <rect key="frame" x="469" y="228" width="103" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="JnA-9t-Sol"/>
-                                        </constraints>
-                                        <state key="normal" title="switch"/>
-                                        <connections>
-                                            <action selector="switch:" destination="n92-1g-hm4" eventType="touchUpInside" id="goJ-wA-bQy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MR-mN-Kov">
-                                        <rect key="frame" x="469" y="287" width="103" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="snap"/>
-                                        <connections>
-                                            <action selector="switch:" destination="n92-1g-hm4" eventType="touchUpInside" id="fsR-Fd-TcJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="4Nd-eL-3pV" firstAttribute="top" secondItem="tKY-8x-ijU" secondAttribute="top" constant="228" id="LX0-M4-Ahp"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Nd-eL-3pV" secondAttribute="trailing" constant="28" id="UWn-qL-PhJ"/>
-                                    <constraint firstItem="4Nd-eL-3pV" firstAttribute="trailing" secondItem="4MR-mN-Kov" secondAttribute="trailing" id="Vjl-R1-o2N"/>
-                                    <constraint firstItem="4Nd-eL-3pV" firstAttribute="leading" secondItem="4MR-mN-Kov" secondAttribute="leading" id="XDc-KF-myq"/>
-                                    <constraint firstItem="4MR-mN-Kov" firstAttribute="top" secondItem="4Nd-eL-3pV" secondAttribute="bottom" constant="29" id="uRf-At-vyW"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nd-eL-3pV">
+                                <rect key="frame" x="348.5" y="285" width="103" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="9uw-as-nNO"/>
+                                </constraints>
+                                <state key="normal" title="switch"/>
+                                <connections>
+                                    <action selector="switch:" destination="n92-1g-hm4" eventType="touchUpInside" id="goJ-wA-bQy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MR-mN-Kov">
+                                <rect key="frame" x="148" y="285" width="103" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="aEg-Tm-4dc"/>
+                                </constraints>
+                                <state key="normal" title="snap"/>
+                                <connections>
+                                    <action selector="snap:" destination="n92-1g-hm4" eventType="touchUpInside" id="ALU-6c-4GS"/>
+                                    <action selector="switch:" destination="n92-1g-hm4" eventType="touchUpInside" id="fsR-Fd-TcJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tKY-8x-ijU" firstAttribute="bottom" secondItem="JLu-pN-ceZ" secondAttribute="top" id="6Ke-a1-cf9"/>
-                            <constraint firstAttribute="trailing" secondItem="tKY-8x-ijU" secondAttribute="trailing" id="Dgl-mt-Ucj"/>
-                            <constraint firstItem="tKY-8x-ijU" firstAttribute="leading" secondItem="5Lq-me-UjY" secondAttribute="leading" id="Qnr-VM-I8Q"/>
-                            <constraint firstItem="tKY-8x-ijU" firstAttribute="top" secondItem="KAe-pG-znZ" secondAttribute="bottom" id="e0y-Ty-1fB"/>
+                            <constraint firstItem="tKY-8x-ijU" firstAttribute="bottom" secondItem="JLu-pN-ceZ" secondAttribute="top" id="2EX-Re-ZbM"/>
+                            <constraint firstItem="tKY-8x-ijU" firstAttribute="top" secondItem="KAe-pG-znZ" secondAttribute="bottom" id="2uo-cM-mwc"/>
+                            <constraint firstItem="4MR-mN-Kov" firstAttribute="baseline" secondItem="4Nd-eL-3pV" secondAttribute="baseline" id="69K-wm-MZ6"/>
+                            <constraint firstItem="tKY-8x-ijU" firstAttribute="leading" secondItem="5Lq-me-UjY" secondAttribute="leading" id="6cd-jZ-cSR"/>
+                            <constraint firstItem="tKY-8x-ijU" firstAttribute="centerX" secondItem="4Nd-eL-3pV" secondAttribute="centerX" constant="-100" id="gir-qu-caf"/>
+                            <constraint firstItem="4MR-mN-Kov" firstAttribute="leading" secondItem="5Lq-me-UjY" secondAttribute="leading" constant="148" id="iTx-OX-nrG"/>
+                            <constraint firstItem="4MR-mN-Kov" firstAttribute="centerY" secondItem="5Lq-me-UjY" secondAttribute="centerY" id="tE2-NY-XhS"/>
+                            <constraint firstAttribute="trailing" secondItem="tKY-8x-ijU" secondAttribute="trailing" id="v16-Ee-dt1"/>
                         </constraints>
                     </view>
                     <connections>
