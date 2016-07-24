@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Social
 import AVFoundation
+import CameraManager
+
 
 class switchView: UIViewController, UIImagePickerControllerDelegate, UINavigationBarDelegate {
     
